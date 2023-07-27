@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<!--
     <h1>你好，黑马头条移动端项目！ </h1>
     <i class="toutiao toutiao-dianzan"></i>
     <van-button type="primary">主要按钮</van-button>
@@ -10,6 +11,7 @@
     <div class="box">
       Hello World
     </div>
+-->
     <router-view/>
   </div>
 </template>

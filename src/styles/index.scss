@@ -1,4 +1,5 @@
 // 全局scss样式
+// css reset
 * {
   padding: 0;
   margin: 0;
@@ -14,6 +15,18 @@ a {
 img {
   vertical-align: bottom;
 }
+body {
+  background-color: #f5f7f9;
+}
 
 // 字体图标
 @import url("./font_toutiao/iconfont.css");
+
+// 调整vant组件库的样式
+.van-nav-bar__content {
+  background-image: linear-gradient(to top right, rgba(25, 137, 250, 1), rgba(25, 137, 250, 0.5));
+  .van-nav-bar__title.van-ellipsis {
+    color: #fff;
+  }
+}
+
