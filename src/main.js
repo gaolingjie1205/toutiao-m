@@ -11,7 +11,7 @@ import store from './store'
 import '@/styles/index.scss'
 
 // 引入vant组件库
-import { Button, NavBar, Form, Field, Toast, CountDown } from 'vant'
+import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog } from 'vant'
 import 'vant/lib/index.css'
 
 // 使用 lib-flexible 动态设置 REM 基准值（html 标签的字体大小）
@@ -23,6 +23,15 @@ Vue.use(Form)
 Vue.use(Field)
 Vue.use(Toast)
 Vue.use(CountDown)
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+Vue.use(Icon)
+Vue.use(VanImage)
+Vue.use(Grid)
+Vue.use(GridItem)
+Vue.use(Cell)
+Vue.use(CellGroup)
+Vue.use(Dialog)
 Vue.config.productionTip = false
 
 new Vue({

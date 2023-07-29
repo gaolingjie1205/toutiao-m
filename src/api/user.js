@@ -20,3 +20,11 @@ export const getSmsCode = function (mobile) {
     url: `/v1_0/sms/codes/${mobile}`
   })
 }
+
+// 获取用户个人资料
+export const getUserInfo = function () {
+  return request({
+    method: 'get',
+    url: '/v1_0/user/profile'
+  })
+}

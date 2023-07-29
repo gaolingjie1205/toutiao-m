@@ -1,7 +1,11 @@
 <template>
   <div class="login-container">
     <!-- 顶部导航栏 -->
-    <van-nav-bar title="请登录" />
+    <van-nav-bar title="请登录">
+      <template #left>
+        <van-icon name="arrow-left" color="#fff" size="20px" @click="$router.back()"/>
+      </template>
+    </van-nav-bar>
 
     <!-- 登录表单 -->
     <van-form ref="loginForm" @submit="onSubmit">
@@ -124,6 +128,11 @@ export default {
         this.$store.commit('setUser', loginResult.data.data)
         console.log('LoginIndex.vue已经将顶层vuex模块的user更新为以下对象：')
         console.log(this.$store.state.user)
+
+        // 进入个人主页
+        setTimeout(() => {
+          this.$router.push('/my')
+        }, 1000)
       } catch (e) {
         this.$toast.fail(`登录失败，${e?.response?.data?.message || '请检查您的网络连接'}`)
         console.log('LoginIndex.vue在发送登录信息时发生了错误！')
