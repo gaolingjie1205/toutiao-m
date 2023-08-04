@@ -20,13 +20,13 @@ const request = axios.create({
 // `return Promise.reject(error);`：在请求拦截器错误回调函数中需要返回一个被拒绝的Promise，以便后续的错误处理流程能够捕获到错误，这也需要开发者注意捕获此处的错误
 request.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  console.log('request.js已经捕获到了当前请求配置对象')
-  console.log(config)
+  // console.log('request.js已经捕获到了当前请求配置对象')
+  // console.log(config)
   if (store.state?.user?.token) {
     config.headers.Authorization = `Bearer ${store.state?.user?.token}`
   }
-  console.log('request.js修改了当前请求配置对象为如下')
-  console.log(config)
+  // console.log('request.js修改了当前请求配置对象为如下')
+  // console.log(config)
   return config
 }, function (error) {
   // 对请求错误做些什么

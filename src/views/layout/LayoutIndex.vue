@@ -46,6 +46,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layout-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 // 底部导航栏
 .van-hairline--top-bottom {
   user-select: none;

@@ -30,3 +30,6 @@ body {
   }
 }
 
+.van-nav-bar__title.van-ellipsis {
+  max-width: 100% !important; // 默认NavBar的title只能为60%宽
+}

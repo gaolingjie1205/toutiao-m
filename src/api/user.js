@@ -28,3 +28,11 @@ export const getUserInfo = function () {
     url: '/v1_0/user/profile'
   })
 }
+
+// 获取用户的频道
+export const getUserChannels = function () {
+  return request({
+    method: 'get',
+    url: '/v1_0/user/channels'
+  })
+}
