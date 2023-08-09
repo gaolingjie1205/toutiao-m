@@ -11,11 +11,14 @@ import store from './store'
 import '@/styles/index.scss'
 
 // 引入vant组件库
-import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh } from 'vant'
+import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh, Popup } from 'vant'
 import 'vant/lib/index.css'
 
 // 使用 lib-flexible 动态设置 REM 基准值（html 标签的字体大小）
 import 'amfe-flexible'
+
+// 引入utils/dayjs.js
+import dayjs from '@/utils/dayjs'
 
 Vue.use(Button)
 Vue.use(NavBar)
@@ -36,7 +39,13 @@ Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(List)
 Vue.use(PullRefresh)
+Vue.use(Popup)
 Vue.config.productionTip = false
+
+// 自定义日期格式化过滤器
+Vue.filter('relativeTime', value => { // 定义一个过滤器，在Vue模板里快速调用
+  return dayjs().to(dayjs(value)) // '2000-01-01 00:00:00' => 23 年前
+})
 
 new Vue({
   router,
