@@ -3,7 +3,7 @@
     <!-- 顶部导航栏 -->
     <van-nav-bar title="首页" fixed placeholder>
       <template #title>
-        <van-button type="primary" class="search-btn" >
+        <van-button type="primary" class="search-btn" @click="$router.push('/search')">
           <van-icon name="search" />
           <span>搜索</span>
         </van-button>
@@ -67,7 +67,7 @@ export default {
       activeTab: 0, // 当前显示的用户的频道索引
       activeTabId: 0, // 当前显示的用户的频道id
       channels: [], // 用户的频道列表，放进tab栏、频道编辑组件里渲染
-      isChannelEditShow: true // 弹出层是否弹出
+      isChannelEditShow: false // 弹出层是否弹出
     }
   },
   computed: {

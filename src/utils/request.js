@@ -6,7 +6,7 @@ import store from '@/store/index.js'
 // 创建一个axios实例对象，来请求黑马服务器
 const request = axios.create({
   baseURL: 'https://toutiao.itheima.net/',
-  timeout: 3000,
+  timeout: 10000,
   headers: {
     // Authorization: ''
   }
