@@ -16,9 +16,16 @@ module.exports = {
       rootValue({file}) {
         // console.log("postcss-pxtorem插件在转换px为rem单位时，接收到的input参数为：");
         // console.log(input);
+        // if (file.indexOf('vant') !== -1 || file.indexOf('xxx.css') !== -1) {
+        //   return 37.5
+        // }
+        // else {
+        //   return 75
+        // }
         return file.indexOf("vant") !== -1 ? 37.5 : 75
       },
-      propList: ['*']
+      propList: ['*'],
+      exclude: 'github-markdown' // 什么CSS文件的样式不需要转换，就写进这个配置项里
     }
   }
 }

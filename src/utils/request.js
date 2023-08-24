@@ -2,6 +2,7 @@
 // 对axios进行二次封装，主要是为了配置一些网络请求设置
 import axios from 'axios'
 import store from '@/store/index.js'
+import JSONbig from 'json-bigint'
 
 // 创建一个axios实例对象，来请求黑马服务器
 const request = axios.create({
@@ -9,7 +10,18 @@ const request = axios.create({
   timeout: 10000,
   headers: {
     // Authorization: ''
-  }
+  },
+  transformResponse: [function (data) {
+    // 修改响应数据为符合项目要求的格式
+    try {
+      // 妥善处理大整数
+      return JSONbig.parse(data)
+    } catch (e) {
+      console.log(e)
+      // 如果后端返回的字符串无法正确反序列化，则直接返回
+      return data
+    }
+  }]
 })
 
 // 添加请求拦截器，在发出请求或接收响应之前对请求或者响应进行处理

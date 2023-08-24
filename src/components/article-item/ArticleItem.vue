@@ -2,7 +2,9 @@
   <!-- 文章列表项组件，接收文章信息并展示，可以点击查看文章内容 -->
   <div class="article-item">
     <van-cell-group>
-      <van-cell>
+      <!-- :to="`/article/${article.art_id}`" -->
+      <!-- 为axios配置 JSONbig.parse(data) 后，可能有大整数对象，需要转换为字符串来正确显示数字 -->
+      <van-cell :to="{ name: 'article', params: { articleId: article.art_id.toString() } }">
         <!-- 文章标题 -->
         <template #title>
           <div class="article-item-title">{{ article.title }}</div>

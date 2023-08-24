@@ -1,7 +1,7 @@
 /**
  * utils/storage.js 本地存储操作模块
  */
-
+import JSONbig from 'json-bigint'
 /**
  * 存储数据到本地存储
  * @param {string} key
@@ -10,7 +10,7 @@
  */
 export const setItem = function (key, value) {
   if (typeof value === 'object') {
-    value = JSON.stringify(value)
+    value = JSONbig.stringify(value)
   }
   if (typeof key !== 'string' || typeof value !== 'string') {
     return false
@@ -31,13 +31,13 @@ export const setItem = function (key, value) {
 /**
  * 从本地存储获取数据，如果有对象字符串则会还原成对象
  * @param {string} key
- * @returns 经过JSON.parse()之后的数据
+ * @returns 经过JSONbig.parse()之后的数据
  */
 export const getItem = function (key) {
   const data = window.localStorage.getItem(key)
   try {
     // 如果该JSON字符串有效,则还原成对象
-    return JSON.parse(data)
+    return JSONbig.parse(data)
   } catch (e) {
     return data
   }

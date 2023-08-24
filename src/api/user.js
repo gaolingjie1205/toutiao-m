@@ -36,3 +36,30 @@ export const getUserChannels = function () {
     url: '/v1_0/user/channels'
   })
 }
+
+// 关注用户
+export const followUser = function (target = '') {
+  // target目标用户id
+  return request({
+    method: 'post',
+    url: '/v1_0/user/followings',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data: {
+      target
+    }
+  })
+}
+
+// 取消关注用户
+export const unfollowUser = function (target = '') {
+  // target目标用户id
+  return request({
+    method: 'delete',
+    url: '/v1_0/user/followings/' + target,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
+}
